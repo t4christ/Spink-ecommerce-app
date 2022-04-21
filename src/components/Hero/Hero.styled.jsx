@@ -11,30 +11,29 @@ export const HeroContainer = styled.div`
 `;
 
 export const HeroImageContainer = styled.div`
-  width: 70%;
   margin: 0 auto;
-  height: 70%;
+  opacity: 0;
+  width: 0%;
+  height: 0%;
   display: flex;
   justify-content: center;
   align-items: center;
+  transition: all 2s ease-in-out;
   @media (max-width: 768px) {
     height: 100%;
   } ;
 `;
+
+export const customStyles = {
+  opacity: "1",
+  width: "70%",
+  height: "70%",
+};
 
 export const HeroImage = styled.img`
   min-width: 300px;
   max-width: 400px;
   object-fit: cover;
   z-index: 10;
-  animation: rotation 20s linear infinite forwards;
-  @keyframes rotation {
-    0% {
-      transform: rotate(0deg);
-    }
-
-    100% {
-      transform: rotate(360deg);
-    }
-  }
+  transform: rotate(40deg);
 `;

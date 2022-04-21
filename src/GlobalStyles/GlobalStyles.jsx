@@ -18,12 +18,15 @@ const GlobalStyles = createGlobalStyle`
     margin:0;
     padding:0;
     box-sizing:border-box ;
+    font-family: 'Josefin Sans', sans-serif;
+    scroll-behavior: smooth;
+    scroll-padding-top:6rem;
 }
 
 body{
     width: 100vw;
     background-color:#ffffff;
-    font-family: 'Josefin Sans', sans-serif;
+    scroll-behavior: smooth;
     /* overflow-x: hidden; */
     /* font-family:'Raleway', sans-serif; */
 }

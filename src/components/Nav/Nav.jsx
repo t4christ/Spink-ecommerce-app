@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import {
   NavContainer,
   Logo,
@@ -12,25 +12,44 @@ import {
   CartSection,
 } from "./Nav.styled";
 import { Container } from "../../GlobalStyles/GlobalStyles";
+import { Context } from "../../ReducerContext/ReducerContext";
 
 const Nav = () => {
   const [menu, setMenu] = useState(false);
+  const [dispatch, state] = useContext(Context);
 
   return (
     <NavContainer>
       <Container>
         <NavContents>
-          <Logo href="#home">Spink</Logo>
+          <Logo href="/">Spink</Logo>
           <NavLinksContainer style={!menu ? null : { top: "-1rem" }}>
-            <NavLinks href="#home">Home</NavLinks>
-            <NavLinks href="#gadgets">Gadgets</NavLinks>
+            <NavLinks href="/">Home</NavLinks>
+            <NavLinks href="/Gadgets">Gadgets</NavLinks>
             <NavLinks href="#about">About</NavLinks>
             <NavLinks href="#contact">Contact</NavLinks>
           </NavLinksContainer>
           <CartSection>
-            <NavLinks href="#cart">
+            <NavLinks href="/Cart">
               <ShoppingBag />
-              Cart <span>(0)</span>
+              Cart{" "}
+              <h3
+                style={{
+                  fontWeight: "bolder",
+                  fontSize: ".8rem",
+                  color: "white",
+                  backgroundColor: "black",
+                  borderRadius: "50%",
+                  padding: "0.5rem",
+                  height: "1.2rem",
+                  width: "1.2rem",
+                  display: "flex",
+                  justifyContent: "center",
+                  alignItems: "center",
+                }}
+              >
+                {state.length}
+              </h3>
             </NavLinks>
           </CartSection>
           <MenuContainer>

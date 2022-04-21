@@ -16,7 +16,7 @@ export const Search = styled.input`
   font-size: 14px;
   padding-left: 2.5rem;
   outline: none;
-  height: 2rem;
+  height: 3rem;
   color: var(--primary-color);
   font-family: inherit;
   font-size: 300;
